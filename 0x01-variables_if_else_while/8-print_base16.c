@@ -8,14 +8,13 @@
 int main(void)
 {
 	char digit = '0';
+	char lowerHex = 'a';
 
 	while (digit <= '9')
 	{
 		putchar(digit);
 		digit++;
 	}
-
-	char lowerHex = 'a';
 
 	while (lowerHex <= 'f')
 	{
