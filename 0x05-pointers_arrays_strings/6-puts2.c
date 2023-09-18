@@ -1,10 +1,8 @@
-/* 6-puts2.c */
-
 #include "main.h"
 
 /**
- * puts2 - Prints every other character of a string followed by a new line
- * @str: The string to be printed
+ * puts2 - Prints every other character of a string, starting with the first.
+ * @str: The string to be printed.
  */
 void puts2(char *str)
 {
@@ -13,7 +11,7 @@ void puts2(char *str)
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
-		i += 2; /* Skip every other character */
+		i += 2;
 	}
 
 	_putchar('\n');
