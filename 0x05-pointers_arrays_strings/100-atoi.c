@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	int sign = 1;
-	int num = 0;
+	long int num = 0;
 	int i = 0;
 
 	while (s[i] != '\0')
@@ -29,5 +29,12 @@ int _atoi(char *s)
 		i++;
 	}
 
-	return (num * sign);
+	num *= sign;
+
+	if (num > INT_MAX)
+		return (INT_MAX);
+	if (num < INT_MIN)
+		return (INT_MIN);
+
+	return ((int)num);
 }
