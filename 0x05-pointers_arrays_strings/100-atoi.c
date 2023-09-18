@@ -40,5 +40,5 @@ int _atoi(char *s)
 		s++;
 	}
 
-	turn num * sign;
+	return num * sign;
 }
