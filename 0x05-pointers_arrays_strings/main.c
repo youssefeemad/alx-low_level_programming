@@ -56,12 +56,11 @@ int main(void)
     /* Task 8: print_array */
     printf("Task 8 - Elements of the array: ");
     print_array(array, 5);
-    printf("\n");
 
     /* Task 9: _strcpy */
-    printf("Task 9 - Original string: '%s'\n", revStr);
-    _strcpy(str2, revStr);
-    printf("Task 9 - Copied string: '%s'\n", str2);
+    printf("Task 9 - _strcpy output:\n");
+    _strcpy(str2, "Destination buffer is now this string.");
+    printf("Copied string: '%s'\n", str2);
 
     return (0);
 }
