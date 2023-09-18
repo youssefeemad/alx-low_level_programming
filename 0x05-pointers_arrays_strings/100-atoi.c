@@ -24,9 +24,9 @@ int _atoi(char *s)
 			if (num > (INT_MAX - digit) / 10)
 			{
 				if (sign == 1)
-					return INT_MAX;
+					return (INT_MAX);
 				else
-					return INT_MIN;
+					return (INT_MIN);
 			}
 
 			num = num * 10 + digit;
