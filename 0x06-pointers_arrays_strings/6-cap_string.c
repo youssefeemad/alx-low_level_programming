@@ -2,7 +2,7 @@
 
 /**
  * cap_string - Capitalizes all words of a string.
- * @str: The string to be capitalized.
+ * @str: The string to be modified.
  *
  * Return: A pointer to the modified string str.
  */
@@ -12,12 +12,15 @@ char *cap_string(char *str)
 
 	while (str[i] != '\0')
 	{
-		if ((i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t' || str[i - 1] == '\n' ||
-			 str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' || str[i - 1] == '!' ||
-			 str[i - 1] == '?' || str[i - 1] == '"' || str[i - 1] == '(' || str[i - 1] == ')' ||
-			 str[i - 1] == '{' || str[i - 1] == '}') && (str[i] >= 'a' && str[i] <= 'z'))
+		/* Capitalize the first letter of a word */
+		if ((i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t' ||
+			 str[i - 1] == '\n' || str[i - 1] == ',' || str[i - 1] == ';' ||
+			 str[i - 1] == '.' || str[i - 1] == '!' || str[i - 1] == '?' ||
+			 str[i - 1] == '"' || str[i - 1] == '(' || str[i - 1] == ')' ||
+			 str[i - 1] == '{' || str[i - 1] == '}') &&
+			(str[i] >= 'a' && str[i] <= 'z'))
 		{
-			str[i] -= 32;  // Convert to uppercase using ASCII values
+			str[i] = str[i] - 32; /* Convert to uppercase */
 		}
 		i++;
 	}
