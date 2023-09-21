@@ -8,20 +8,20 @@
  */
 char *leet(char *s)
 {
-	char *result = s;
-	char leetMap[256] = {0};
+	int i, j;
+	char s1[] = "aAeEoOtTlL";
+	char s2[] = "4433007711";
 
-	leetMap['a'] = leetMap['A'] = '4';
-	leetMap['e'] = leetMap['E'] = '3';
-	leetMap['o'] = leetMap['O'] = '0';
-	leetMap['t'] = leetMap['T'] = '7';
-	leetMap['l'] = leetMap['L'] = '1';
-
-	for (int i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (leetMap[s[i]] != 0)
-			result[i] = leetMap[s[i]];
+		for(j = 0; j < 10; j++)
+		{
+			if(s[i] == s1[j])
+			{
+				s[i] = s2[j];
+			}
+		}
 	}
 
-	return (result);
+	return (s);
 }
