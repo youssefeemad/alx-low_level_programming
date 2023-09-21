@@ -8,32 +8,22 @@
  */
 char *leet(char *str)
 {
-	int i = 0;
-	size_t length = strlen(s);
-	while (length != 0)
+	char *ptr = s;
+	char leet[] = "aAeEoOtTlL";
+	char leet_replacements[] = "4433007711";
+
+	while (*s)
 	{
-		if (s[i] == 'a' || s[i] == 'A')
+		for (int i = 0; leet[i]; i++)
 		{
-			s[i] = '4';
+			if (*s == leet[i])
+			{
+				*s = leet_replacements[i];
+				break;
+			}
 		}
-		else if (s[i] == 'e' || s[i] == 'E')
-		{
-			s[i] = '3';
-		}
-		else if (s[i] == 'o' || s[i] == 'O')
-		{
-			s[i] = '0';
-		}
-		else if (s[i] == 't' || s[i] == 'T')
-		{
-			s[i] = '7';
-		}
-		else if (s[i] == 'l' || s[i] == 'L')
-		{
-			s[i] = '1';
-		}
-		i++;
-		length--;
+ 		s++;
 	}
-	return (s);
+
+	return (ptr);
 }
