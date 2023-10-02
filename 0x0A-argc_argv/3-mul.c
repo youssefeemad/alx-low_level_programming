@@ -9,17 +9,14 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, product = 1;
+	int product;
 
-	if (argc < 3)
+	if(argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	for (i = 1; i < argc; ++i)
-	{
-		product *= atoi(argv[i]);
-	}
+	product = atoi(argv[1]) * atoi(argv[2]);
 	printf("%d\n", product);
 	return (0);
 }
