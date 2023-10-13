@@ -1,27 +1,17 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_all(const char * const format, ...)
 {
-	int i = n;
-	va_list ar;
+	va_list list;
+	unsigned int j = 0, start = 0;
+	char *p;
 
-	if (!n)
-	{
-		printf("\n");
-		return;
-	}
-	va_start(ar, n);
-	for (i = 0 ; i < n ; i++)
-	{
-		printf("%d%s", va_arg(ar, int), 
-		(i < n - 1) ? (separator ? separator : "") : "\n");
-	}
-	va_end(ar);
+	
 }
 
 int main(void)
 {
-    print_strings(", ", 2, "Jay", "Django");
+    print_all("ceis", 'B', 3, "stSchool");
     return (0);
 }
