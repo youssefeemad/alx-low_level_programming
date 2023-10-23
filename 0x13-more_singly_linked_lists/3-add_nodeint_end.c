@@ -31,14 +31,3 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	tmp->next = new_node;
 	return (new_node);
 }
-
-void print_listint(listint_t *head)
-{
-    listint_t *current = head;
-    
-    while (current != NULL)
-    {
-        printf("%d\n", current->n);
-        current = current->next;
-    }
-}
