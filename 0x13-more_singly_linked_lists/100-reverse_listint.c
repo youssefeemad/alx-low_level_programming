@@ -1,26 +1,25 @@
 #include "lists.h"
-#include <stdlib.h>
 
 /**
- * free_listint - Frees a list.
- * @head: Address of the first node of a list.
- **/
-size_t print_listint_safe(const listint_t *head)
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
+ */
+listint_t *reverse_listint(listint_t **head)
 {
-	const listint_t *tp;
-	size_t count = 0;
+	listint_t *prev = NULL;
+	listint_t *next = NULL;
 
-	tp = head;
-	while (tp != NULL)
+	while (*head)
 	{
-		printf("[%p] %d\n", (void *)tp, tp->n);
-		count++;
-		if (tp->next >= tp)
-		{
-			printf("-> [%p] %d\n", (void *)tp->next, tp->next->n);
-			break;
-		}
-		tp = tp->next;
+		next = (*head)->next;
+		(*head)->next = prev;
+		prev = *head;
+		*head = next;
 	}
-	return (count);
+
+	*head = prev;
+
+	return (*head);
 }
