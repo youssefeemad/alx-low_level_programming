@@ -1,14 +1,13 @@
-#include "lists.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
+typedef struct listint_s
+{
+	int n;
+	struct listint_s *next;
+} listint_t;
 
-/**
- * add_nodeint_end - adds a new node at the end of a listint_t list
- * @head: pointer to the head of the list
- * @n: integer to add to the list
- * Return: address of the new element, or NULL if it failed
- */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 	listint_t *new_node = NULL, *tmp = NULL;
@@ -41,4 +40,21 @@ void print_listint(listint_t *head)
         printf("%d\n", current->n);
         current = current->next;
     }
+}
+
+int main(void)
+{
+    listint_t *head;
+
+    head = NULL;
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    return (0);
 }
